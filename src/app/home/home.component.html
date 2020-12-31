@@ -1,0 +1,131 @@
+    <main class="main">
+        <div class="carousel-row"></div>
+            
+        <div class="cnt-carousel">
+                
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" >
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/img/index/hero0.jpg" class="d-block w-100" alt="" >
+                        <div class="carousel-caption d-md-block" appParallax [ratio]="-0.1">
+                            <h5 class="slide1-linha1">Our mission is to transform</h5>
+                            <h3 class="slide1-linha2">Dreams come true</h3>
+                            <button type="button" (click)="scroll()" class="btn btn-padrao slide1-botao">Know More</button>
+                        </div>
+                    </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="sr-only">Next</span>
+                    </a> 
+            </div>
+    </div>
+    
+    <div id="produtos"></div>    
+    <div class="container bg-white cnt-main">
+        <div class="row home-titulo">
+            <h1>what we love to do</h1>
+        </div>
+
+
+<swiper [config]="config" class="row linha1pai">
+    <div class="linha1">
+        <a routerLink="../produtos/bolos">
+            <div class="c1-img"><img src="assets/img/index/icone-bolo.png"></div>
+            <h3 class="c1">Cakes</h3>
+        </a>
+        <p style="margin-left: 15px;" class="c1">
+            <a routerLink="../produtos/bolos/pasta" class="prod-link">
+                <i class="fas fa-heart"></i> Pasta Americana
+            </a><br>
+            <a routerLink="../produtos/bolos/naked" class="prod-link">
+                <i class="fas fa-heart"></i> Naked Cake
+            </a><br>
+            <a routerLink="../produtos/bolos/confeitados" class="prod-link">
+                <i class="fas fa-heart"></i> Confeitados
+            </a>
+        </p>
+    </div>
+    <div class="linha1">
+        <a routerLink="../produtos/docinhos">
+            <div class="c2-img"><img src="assets/img/index/icone-brigadeiro.png"></div>
+            <h3 class="c2">Docinhos</h3>
+        </a>
+        <p class="c2">
+            <a routerLink="../produtos/docinhos/finos" class="prod-link">
+                <i class="fas fa-heart"></i> Doces Finos
+            </a><br>
+            <a routerLink="../produtos/docinhos/infantis" class="prod-link">
+                <i class="fas fa-heart"></i> Infantis
+            </a><br>
+            <a routerLink="../produtos/docinhos/tradicionais" class="prod-link">
+                <i class="fas fa-heart"></i> Tradicionais
+            </a>
+        </p>
+    </div>
+    <div class="linha1">
+        <a routerLink="../produtos/doces">
+            <div class="c3-img"><img src="assets/img/index/icone-cupcake.png"></div>
+            <h3 class="c3">Doces Maiores</h3>
+        </a>
+        <p style="margin-left: 15px;" class="c3">
+            <a routerLink="../produtos/doces/cupcakes" class="prod-link">
+                <i class="fas fa-heart"></i> Cupcakes
+            </a><br>
+            <a routerLink="../produtos/doces/pirulitos" class="prod-link">
+                <i class="fas fa-heart"></i> Pirulitos Decorados
+            </a><br>
+            <a routerLink="../produtos/doces/bemcasados" class="prod-link">
+                <i class="fas fa-heart"></i> Bem Casados
+            </a>
+        </p>
+    </div>
+</swiper>
+
+
+        <!-- <div class="row home-titulo bgalt">
+                <h1>Um pouco sobre nós</h1>
+        </div>
+        <div class="row bgalt">
+            <div class="col linha2">
+                <p>Um pouco de arte, um pouco de confeitaria. </p>
+                <a href="/sobre.html#quemsomos/"><button type="button" class="btn btn-padrao">Conheça Mais</button></a>
+            </div>
+            <div class="col-5 linha2">
+                <img src="/imagens/index/quemsomos.jpg" class="thumbnail">
+            </div>
+        </div> -->
+
+        <div class="row home-titulo">
+                <h1>Alguns trabalhos ...</h1>
+        </div>
+
+                <swiper [config]="config2" class="row galeria">
+                    <div class="slider-img" *ngFor="let img of imgs">
+                        <img data-src="../../assets/img/index/galeria/img{{img}}-tmb.jpg" class="swiper-lazy" 
+                        (click)="imgClick()" lightbox [fullImage]="{path: '../../assets/img/index/galeria/img'+img+'.jpg'}"
+                        [closeButtonText]="closeButtonText" closing-state:animation-end="lightboxClose()">
+                    </div>
+                </swiper>
+                <div class="row linha3">
+                        <a href="https://www.instagram.com/demonte.doces" target="_blank"><button type="button" class="btn btn-padrao">Ver Portfólio completo</button></a>
+                </div>
+        
+        <div class="row home-titulo depoim">
+                <h1>Clientes satisfeitos &nbsp; <i class="far fa-heart"></i></h1>
+        </div>
+
+            <swiper [config]="config3" class="depoimentos">
+                <div class="slider-dep" *ngFor="let depoimento of depoimentos">
+                    <p>"{{depoimento.texto}}"</p>
+                    <h6>- {{depoimento.pessoa}}</h6>  
+                </div>
+            </swiper>
+            
+        
+    </div>
+    </main>
